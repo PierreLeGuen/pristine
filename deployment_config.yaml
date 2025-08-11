@@ -1,0 +1,27 @@
+http:
+  port: 5005
+  health_check_path: /
+name: Pristine
+summary: Pristine is a sophisticated Rust-based agent application designed for autonomous repository management and intelligent issue handling on GitHub.
+environment_variables:
+  - name: GITHUB_PERSONAL_ACCESS_TOKEN
+    value: <your_github_personal_access_token>
+    description: Your GitHub Personal Access Token (PAT) with `repo` scope, required for cloning private repositories and interacting with the GitHub API.
+  - name: GITHUB_REPOSITORY_OWNER
+    value: <repository_owner>
+    description: The owner (user or organization) of the target GitHub repository.
+  - name: GITHUB_REPOSITORY_NAME
+    value: <repository_name>
+    description: The name of the target GitHub repository.
+  - name: GITHUB_REPOSITORY_ISSUES_BRANCH
+    value: issues
+    description: (Optional) The name of the branch where issues will be managed. Defaults to `issues`.
+  - name: OPENAI_API_KEY
+    value: <your_openai_api_key>
+    description: Your OpenAI API key for LLM integration.
+  - name: OPENAI_API_BASE
+    value: https://api.openai.com
+    description: (Optional) The base URL for the OpenAI API. Defaults to `https://api.openai.com`.
+  - name: OPENAI_API_MODEL
+    value: gpt-3.5-turbo
+    description: (Optional) The name of the OpenAI model to use for LLM inference. Defaults to `gpt-3.5-turbo`.
